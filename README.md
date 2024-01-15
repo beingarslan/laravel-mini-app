@@ -15,20 +15,13 @@ Follow these steps to install and run the application:
 
 ### Setup
 
-1. **Clone the Repository** (if you haven't already)
-
-    ```bash
-    git clone [repository-url]
-    cd [repository-directory]
-    ```
-
-2. **Install PHP Dependencies**
+1. **Install PHP Dependencies**
 
     ```bash
     composer install
     ```
 
-3. **Environment Configuration**
+2. **Environment Configuration**
 
     Copy the example environment file and edit it to match your local configuration.
 
@@ -44,7 +37,7 @@ Follow these steps to install and run the application:
     DB_PASSWORD=your_password
     ```
 
-4. **Database Migration and Seeding**
+3. **Database Migration and Seeding**
 
     Run the following command to create the database tables and seed them with any initial data.
 
