@@ -19,7 +19,6 @@
                         <div class="card-body">
                             <p>Party: {{$candidate->party->party_name}}</p>
                             <p>Constituency: {{$candidate->constituency->constituency_name}}</p>
-                            <p>Votes: {{$candidate->vote_count}}</p>
                         </div>
                         @if(!auth()->user()->constituency_id)
                         <div class="card-footer">

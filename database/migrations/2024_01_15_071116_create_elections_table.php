@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->boolean('is_started')->nullable()->default(false);
+            $table->string('result')->nullable();
             $table->timestamps();
         });
     }

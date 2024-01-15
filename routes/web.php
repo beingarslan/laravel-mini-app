@@ -31,5 +31,6 @@ Route::group(
     ],
     function () {
         Route::post('elections/update', [ElectionController::class, 'update'])->name('elections.update');
+        Route::post('announcement', [HomeController::class, 'announcement'])->name('announcement');
     }
 );
