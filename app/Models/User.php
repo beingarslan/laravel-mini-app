@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_election_commission_officer',
+        'constituency_id',
+        'uv_code_id',
     ];
 
     /**
@@ -42,4 +45,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function constituency()
+    {
+        return $this->belongsTo(Constituency::class, 'constituency_id');
+    }
+
+    public function uvc()
+    {
+        return $this->belongsTo(UvcCode::class, 'uv_code_id');
+    }
 }
