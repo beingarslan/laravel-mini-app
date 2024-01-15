@@ -23,6 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/vote', [HomeController::class, 'vote'])->name('vote');
 Route::group(
     [
         'as' => 'election_commission_officer.',

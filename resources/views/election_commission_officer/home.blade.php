@@ -7,11 +7,6 @@
             <div class="card">
                 <div class="card-header">{{ __('Election Commission Officer\'s Dashboard') }}</div>
                 <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
                     <form action="{{route('election_commission_officer.elections.update')}}" method="post">
                         @csrf
                         @if($election)
