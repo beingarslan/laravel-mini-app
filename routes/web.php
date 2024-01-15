@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ElectionController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(
+    [
+        'as' => 'election_commission_officer.',
+        'prefix' => 'election_commission_officer',
+    ],
+    function () {
+        Route::post('elections/update', [ElectionController::class, 'update'])->name('elections.update');
+    }
+);

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Election;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::user()->is_election_commission_officer){
+            $election = Election::where('is_started', true)->first();
+
+            return view('election_commission_officer.home', compact('election'));
+        }
+        else{
+            return view('home');
+        }
     }
 }

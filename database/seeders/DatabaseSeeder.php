@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             PartySeeder::class,
             ConstituencySeeder::class,
             CandidateSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }
