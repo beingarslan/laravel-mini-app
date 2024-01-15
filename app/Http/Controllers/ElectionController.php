@@ -28,14 +28,14 @@ class ElectionController extends Controller
             $election = Election::create([
                 'is_started' => true,
             ]);
-            flash()->success('Election started!');
+            flash()->addSuccess('Election started!');
             return redirect()->back();
         }
         else{
             $election = Election::find($request->election_id);
             $election->is_started = false;
             $election->save();
-            flash()->success('Election ended!');
+            flash()->addSuccess('Election ended!');
             return redirect()->back();
         }
     }
